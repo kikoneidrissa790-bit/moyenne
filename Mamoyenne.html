@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Calculateur de Moyenne</title>
+  <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #F1F5F9;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0cap;
+            background: rgb(255, 255, 255);
+         border-radius: 15PX;
+        overflow: hidden;
+        box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.25)             
+    }
+            
+        th, td {
+            padding: 10px;
+            border: 1px solid #9e9c9c;
+            text-align: center;
+           
+        }
+        th {
+            background: #155E75;
+            color: white;
+         
+        }
+
+       
+       
+h2{
+    background-color: #155E75;
+    padding: 10px ;
+    border-radius: 15px;
+    display: block;
+    cursor: pointer;
+    color: #F1F5F9;
+    text-align: center;
+     display: inline-block;
+       margin-top: 20px;
+   
+}
+
+.titre {
+    text-align: center;   
+}
+
+p{
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+
+
+.texte{
+    text-align: center;
+}
+        
+        input {
+            width: 80px;
+            padding: 5px;
+            border-radius: 15px;      
+           
+        }
+
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #155E75;
+            border-radius: 15px;
+            border-color: #114f62;
+            transition: 0,3s;
+              display: block;
+              margin: 20px auto; 
+              color: white;   
+              border: none;    
+            box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.25)   
+            }
+
+
+
+        button:hover{
+            background-color: #0da143a3;
+        }
+        
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .non-classe {
+            color: red;
+            font-style: italic;
+        }
+
+
+       .result {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.bulle-resultat {
+    background: #155E75;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    animation: pop 0.4s ease-in-out;
+    text-align: center;
+}
+
+@keyframes pop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Version mobile */
+@media (max-width: 600px) {
+    .bulle-resultat {
+        font-size: 18px;
+        padding: 12px 20px;
+    }
+}
+
+        .social-icons {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    font-size: 28px;
+    color: #1aea6d;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #0d47a1;
+    transform: scale(1.2);
+}
+
+.fa-facebook-f { color: #1877f2; }
+.fa-instagram { color: #e1306c; }
+.fa-whatsapp { color: #25d366; }
+
+@media (max-width: 768px) {
+
+    table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    input {
+        width: 60px;
+        padding: 5px;
+    }
+
+    button {
+        width: 100%;
+        max-width: 300px;
+        margin: 20px auto;
+        font-size: 15px;
+    }
+
+    h2 {
+        font-size: 18px;
+        padding: 6px 12px;
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+
+
+<div  class="titre">
+    <h2>Calcul de la moyenne générale</h2>
+</div>
+
+
+<table>
+    <tr>
+        <th>Matière</th>
+        <th>Note /20</th>
+        <th>Coefficient</th>
+        <th>Statut</th>
+    </tr>
+
+
+    <tr>
+        <td>Mathématiques</td>
+        <td><input  type="number" min="0" max="20" step="0.01" ></td>
+        <td><input type="number" min="1"></td>
+        <td class="statut"></td>
+    </tr>
+
+            <tr>
+        <td>physique</td>
+        <td><input type="number" min="0" max="20" step="0.01"></td>
+        <td><input type="number" min="1"></td>
+        <td class="statut"></td>
+    </tr>
+    <tr>
+        <td>Français</td>
+        <td><input type="number" min="0" max="20" step="0.01"></td>
+        <td><input type="number" min="1"></td>
+        <td class="statut"></td>
+    </tr>
+
+             <tr>
+        <td>philosophie</td>
+        <td><input type="number" min="0" max="20" step="0.01"></td>
+        <td><input type="number" min="1"></td>
+        <td class="statut"></td>
+    </tr>
+
+
+   <tr>
+        <td>Histoire/geo</td>
+        <td><input type="number" min="0" max="20" step="0.01"></td>
+        <td><input type="number" min="1"></td>
+        <td class="statut"></td>
+    </tr>
+
+       <tr>
+        <td>Anglais</td>
+        <td><input type="number" min="0" max="20" step="0.01"></td>
+        <td><input type="number" min="1"></td>
+        <td class="statut"></td>
+    </tr>
+       <tr>
+        <td>langue vivante 1</td>
+        <td><input type="number" min="0" max="20" step="0.01"></td>
+        <td><input type="number" min="1"></td>
+        <td class="statut"></td>
+    </tr>
+
+     <tr>
+        <td>langue vivante 2</td>
+        <td><input type="number" min="0" max="20" step="0.01"></td>
+        <td><input type="number" min="1"></td>
+        <td class="statut"></td>
+    </tr>
+
+       <tr>
+        <td>EPS</td>
+        <td><input type="number" min="0" max="20" step="0.01"></td>
+        <td><input type="number" min="1"></td>
+        <td class="statut"></td>
+    </tr>
+     
+          <tr>
+        <td>SES</td>
+        <td><input type="number" min="0" max="20" step="0.01"></td>
+        <td><input type="number" min="1"></td>
+        <td class="statut"></td>
+    </tr>
+
+             <tr>
+        <td>SVT</td>
+        <td><input type="number" min="0" max="20" step="0.01"></td>
+        <td><input type="number" min="1"></td>
+        <td class="statut"></td>
+    </tr>
+  
+    
+
+             <tr>
+        <td>Options</td>
+        <td><input type="number" min="0" max="20" step="0.01"></td>
+        <td><input type="number" min="1"></td>
+        <td class="statut"></td>
+    </tr>
+
+
+            <tr>
+        <td>Autres</td>
+        <td><input type="number" min="0" max="20" step="0.01"></td>
+        <td><input type="number" min="1"></td>
+        <td class="statut"></td>
+    </tr>
+     
+
+     
+</table>
+
+<button onclick="calculerMoyenne()">Calculer la moyenne</button>
+
+<div class="result" id="resultat"></div>
+
+<script >
+function calculerMoyenne() {
+    let totalNotes = 0;
+    let totalCoef = 0;
+
+    const lignes = document.querySelectorAll("table tr");
+    
+    lignes.forEach((ligne, index) => {
+        if (index === 0) return;
+
+        const note = ligne.cells[1].querySelector("input").value;
+        const coef = ligne.cells[2].querySelector("input").value;
+        const statut = ligne.cells[3];
+
+        if (note === "" || coef === "") {
+            statut.innerHTML = "<span class='non-classe'>Non classé</span>";
+        } else {
+            statut.textContent = "Classé";
+            totalNotes += parseFloat(note) * parseFloat(coef);
+            totalCoef += parseFloat(coef);
+        }
+    });
+
+  if (totalCoef === 0) {
+    document.getElementById("resultat").innerHTML =
+        "<div class='bulle-resultat'>Aucune matière classée</div>";
+} else {
+    const moyenne = (totalNotes / totalCoef).toFixed(2);
+    document.getElementById("resultat").innerHTML =
+        "<div class='bulle-resultat'>🎓 Moyenne générale : " + moyenne + " /20</div>";
+}
+
+}
+</script>
+
+
+<div class="social-icons">
+    <a href="https://www.facebook.com/share/1AcBPsAJsG/?mibextid=wwXIfr"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="Je suis sur Instagram sous le nom @idriss_ksa. Installez l’application pour suivre mes photos et vidéos. https://www.instagram.com/idriss_ksa?igsh=MXkxbno4M3cxazFzcQ==&utm_source=ig_contact_invite"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://wa.me/24104756225" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+</div>
+<br><br>
+
+<p>Developper par KIKONE Idrissa</p>
+
+
+ 
+      
+</body>
+</html>
